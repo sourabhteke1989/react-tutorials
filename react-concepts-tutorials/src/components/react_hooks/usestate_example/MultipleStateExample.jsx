@@ -11,35 +11,42 @@ export default function MultipleStateExample() {
     };
 
     return (
-        <div>
-            <h2>Multiple State Example</h2>
-            <p>Name : {name}, Age : {age}, City : {city}</p>
-            <form onSubmit={handleSubmit}>
+        <div className="p-6 bg-gray-100 rounded-lg shadow-md">
+            <h2 className="text-xl font-bold mb-4">Multiple State Example</h2>
+            <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                    <label>Name: </label>
+                    <label className="block text-sm font-medium mb-1">Name:</label>
                     <input
                         type="text"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
+                        className="w-full px-3 py-2 border rounded shadow-sm focus:outline-none focus:ring focus:ring-blue-300"
                     />
                 </div>
                 <div>
-                    <label>Age: </label>
+                    <label className="block text-sm font-medium mb-1">Age:</label>
                     <input
                         type="number"
                         value={age}
                         onChange={(e) => setAge(Number(e.target.value))}
+                        className="w-full px-3 py-2 border rounded shadow-sm focus:outline-none focus:ring focus:ring-blue-300"
                     />
                 </div>
                 <div>
-                    <label>City: </label>
+                    <label className="block text-sm font-medium mb-1">City:</label>
                     <input
                         type="text"
                         value={city}
                         onChange={(e) => setCity(e.target.value)}
+                        className="w-full px-3 py-2 border rounded shadow-sm focus:outline-none focus:ring focus:ring-blue-300"
                     />
                 </div>
-                <button type="submit">Submit</button>
+                <button
+                    type="submit"
+                    className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+                >
+                    Submit
+                </button>
             </form>
         </div>
     );

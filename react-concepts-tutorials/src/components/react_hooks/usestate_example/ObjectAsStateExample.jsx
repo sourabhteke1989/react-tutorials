@@ -26,14 +26,15 @@ export default function ObjectAsStateExample() {
     };
 
     return (
-        <div>
-            <h2>Object as State Example</h2>
+        <div className="p-4 max-w-md mx-auto bg-white shadow-md rounded-md">
+            <h2 className="text-xl font-bold mb-4 text-gray-700">Object as State Example</h2>
             {/* Input field to update 'firstName' */}
             <input
                 type="text"
                 placeholder="First Name"
                 value={user.firstName} // Binding state to input value (Two-way binding)
                 onChange={handleFirstNameChange} // Updating state on input change (Two-way binding)
+                className="w-full p-2 mb-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
             {/* Input field to update 'lastName' */}
             <input
@@ -41,10 +42,11 @@ export default function ObjectAsStateExample() {
                 placeholder="Last Name"
                 value={user.lastName} // Binding state to input value (Two-way binding)
                 onChange={handleLastNameChange} // Updating state on input change (Two-way binding)
+                className="w-full p-2 mb-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
             {/* Display the updated state */}
-            <p>
-                Full Name: {user.firstName} {user.lastName}
+            <p className="text-gray-600">
+                Full Name: <span className="font-medium">{user.firstName} {user.lastName}</span>
             </p>
         </div>
     );

@@ -31,32 +31,49 @@ const UseRefExample = () => {
   };
 
   return (
-    <div>
-      <h2>useRef Hook Example</h2>
+    <div className="p-6 bg-gray-100 rounded shadow-md">
+      <h2 className="text-xl font-bold mb-4">useRef Hook Example</h2>
 
-      {/* Input element with ref attached */}
-      <input
-        ref={inputRef}
-        type="text"
-        placeholder="Type something..."
-      />
-      <button onClick={focusInput}>Focus Input</button>
-      <button onClick={saveInputValue}>Save</button>
+      <div className="mb-4">
+        {/* Input element with ref attached */}
+        <input
+          ref={inputRef}
+          type="text"
+          placeholder="Type something..."
+          className="border border-gray-300 rounded px-3 py-2 w-full mb-2"
+        />
+        <button
+          onClick={focusInput}
+          className="bg-blue-500 text-white px-4 py-2 rounded mr-2 hover:bg-blue-600"
+        >
+          Focus Input
+        </button>
+        <button
+          onClick={saveInputValue}
+          className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
+        >
+          Save
+        </button>
+      </div>
 
       {/* Displaying saved value */}
-      <p>Saved value: {value}</p>
+      <p className="text-gray-700 mb-2">
+        <span className="font-semibold">Saved value:</span> {value}
+      </p>
 
       {/* Displaying render count */}
-      <p>Component has rendered {renderCount.current} times.</p>
+      <p className="text-gray-700 mb-4">
+        <span className="font-semibold">Component has rendered:</span> {renderCount.current} times.
+      </p>
 
       {/* Explanation */}
-      <ul>
+      <ul className="list-disc list-inside text-gray-700">
         <li>
-          The <code>inputRef</code> is used to attach to the input element and
+          The <code className="bg-gray-200 px-1 rounded">inputRef</code> is used to attach to the input element and
           access its properties (e.g., focusing the input).
         </li>
         <li>
-          The <code>renderCount</code> is a ref that retains its value across
+          The <code className="bg-gray-200 px-1 rounded">renderCount</code> is a ref that retains its value across
           renders without causing re-renders.
         </li>
         <li>
@@ -68,7 +85,7 @@ const UseRefExample = () => {
           until the DOM is mounted.
         </li>
         <li>
-          Avoid using the <code>current</code> value of a ref directly in JSX to assign values to HTML elements during rendering. 
+          Avoid using the <code className="bg-gray-200 px-1 rounded">current</code> value of a ref directly in JSX to assign values to HTML elements during rendering. 
           This is because the ref may not be mounted yet, leading to potential errors.
         </li>
       </ul>

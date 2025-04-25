@@ -1,30 +1,35 @@
 import { useState } from "react";
 
 export default function UseStateExample() {
-    // Initialize state variable 'count' with a default value of 0
-    // 'setCount' is the function to update the 'count' state
     const [count, setCount] = useState(0);
 
     return (
-        <div className="App">
-            <h1>useState Example</h1>
-            {/* Explanation of how useState is used in this component */}
-            <p>
-                In this example, we are using the <code>useState()</code> hook to manage the state of a counter. 
-                The <code>count</code> variable holds the current state value, and the <code>setCount</code> function 
-                is used to update it. We initialize the state with a value of <code>0</code>, and provide buttons 
-                to increment, decrement, or reset the counter by calling <code>setCount</code> with the appropriate value.
+        <div className="p-6 bg-gray-100 rounded-lg shadow-md">
+            <h1 className="text-2xl font-bold mb-4">useState Example</h1>
+            <p className="mb-4">
+                In this example, we are using the <code>useState()</code> hook to manage the state of a counter.
             </p>
-            {/* Instruction for the user */}
-            <p>Click the button to increment the counter.</p>
-            {/* Display the current value of the counter */}
-            <p>Count: {count}</p>
-            {/* Button to increment the counter */}
-            <button onClick={() => setCount(count + 1)}>Increment</button>
-            {/* Button to decrement the counter */}
-            <button onClick={() => setCount(count - 1)}>Decrement</button>
-            {/* Button to reset the counter to 0 */}
-            <button onClick={() => setCount(0)}>Reset</button>
+            <p className="text-lg font-semibold mb-4">Count: {count}</p>
+            <div className="space-x-2">
+                <button
+                    className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
+                    onClick={() => setCount(count + 1)}
+                >
+                    Increment
+                </button>
+                <button
+                    className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
+                    onClick={() => setCount(count - 1)}
+                >
+                    Decrement
+                </button>
+                <button
+                    className="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600"
+                    onClick={() => setCount(0)}
+                >
+                    Reset
+                </button>
+            </div>
         </div>
     );
 }

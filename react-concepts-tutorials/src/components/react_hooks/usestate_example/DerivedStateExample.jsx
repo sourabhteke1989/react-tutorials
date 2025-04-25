@@ -8,19 +8,37 @@ export default function DerivedStateExample() {
   const isEven = count % 2 === 0;
 
   return (
-    <div>
+    <div className="p-6 bg-gray-100 rounded-lg shadow-md max-w-md mx-auto">
       {/* Display the current count */}
-      <h1>Count: {count}</h1>
+      <h1 className="text-2xl font-bold text-center mb-4">Count: {count}</h1>
 
       {/* Display the derived state */}
-      <h2>The count is {isEven ? "Even" : "Odd"}</h2>
+      <h2
+        className={`text-xl font-medium text-center mb-4 ${
+          isEven ? "text-green-500" : "text-red-500"
+        }`}
+      >
+        The count is {isEven ? "Even" : "Odd"}
+      </h2>
 
       {/* Buttons to increment and decrement the count */}
-      <button onClick={() => setCount(count + 1)}>Increment</button>
-      <button onClick={() => setCount(count - 1)}>Decrement</button>
+      <div className="flex justify-center gap-4 mb-4">
+        <button
+          onClick={() => setCount(count + 1)}
+          className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+        >
+          Increment
+        </button>
+        <button
+          onClick={() => setCount(count - 1)}
+          className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"
+        >
+          Decrement
+        </button>
+      </div>
 
       {/* Explanation of derived state */}
-      <p>
+      <p className="text-sm text-gray-600 text-center">
         <strong>Note:</strong> The "isEven" value is derived from the "count"
         state. It is not stored separately but calculated dynamically whenever
         the component renders.

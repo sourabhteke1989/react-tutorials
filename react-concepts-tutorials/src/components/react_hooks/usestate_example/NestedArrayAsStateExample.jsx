@@ -33,21 +33,29 @@ export default function NestedArrayAsStateExample() {
     };
 
     return (
-        <div>
-            <h2>Nested Array as State Example</h2>
+        <div className="p-4 bg-gray-100 min-h-screen">
+            <h2 className="text-2xl font-bold mb-4">Nested Array as State Example</h2>
             {/* Render each person and their hobbies */}
             {nestedArray.map((person) => (
-                <div key={person.id}>
-                    <h3>{person.name}</h3>
-                    <p>Hobbies: {person.hobbies.join(", ")}</p>
-                    {/* Button to add a new hobby */}
-                    <button onClick={() => handleAddHobby(person.id, "New Hobby")}>
-                        Add Hobby
-                    </button>
-                    {/* Button to reset hobbies */}
-                    <button onClick={() => handleClearHobbies(person.id)}>
-                        Clear
-                    </button>
+                <div key={person.id} className="mb-6 p-4 bg-white shadow rounded">
+                    <h3 className="text-xl font-semibold">{person.name}</h3>
+                    <p className="text-gray-700">Hobbies: {person.hobbies.join(", ")}</p>
+                    <div className="mt-2">
+                        {/* Button to add a new hobby */}
+                        <button
+                            onClick={() => handleAddHobby(person.id, "New Hobby")}
+                            className="px-4 py-2 bg-blue-500 text-white rounded mr-2 hover:bg-blue-600"
+                        >
+                            Add Hobby
+                        </button>
+                        {/* Button to reset hobbies */}
+                        <button
+                            onClick={() => handleClearHobbies(person.id)}
+                            className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"
+                        >
+                            Clear
+                        </button>
+                    </div>
                 </div>
             ))}
         </div>
