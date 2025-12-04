@@ -4,12 +4,6 @@
   "files": [],
   "references": [
     {
-      "path": "./apps/y-e2e"
-    },
-    {
-      "path": "./apps/y"
-    },
-    {
       "path": "./apps/web_shell_app-e2e"
     },
     {
