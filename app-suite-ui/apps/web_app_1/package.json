@@ -1,0 +1,108 @@
+{
+  "name": "web_app_1",
+  "version": "0.0.1",
+  "private": true,
+  "homepage": "/app1",
+  "nx": {
+    "name": "web_app_1",
+    "sourceRoot": "apps/web_app_1/src",
+    "targets": {
+      "build": {
+        "executor": "@nx/webpack:webpack",
+        "outputs": [
+          "{options.outputPath}"
+        ],
+        "defaultConfiguration": "production",
+        "options": {
+          "compiler": "babel",
+          "outputPath": "apps/web_app_1/dist",
+          "index": "apps/web_app_1/src/index.html",
+          "baseHref": "/",
+          "main": "apps/web_app_1/src/main.ts",
+          "tsConfig": "apps/web_app_1/tsconfig.app.json",
+          "assets": [
+            "apps/web_app_1/src/favicon.ico",
+            "apps/web_app_1/src/assets"
+          ],
+          "styles": [
+            "apps/web_app_1/src/styles.css"
+          ],
+          "scripts": [],
+          "webpackConfig": "apps/web_app_1/webpack.config.ts"
+        },
+        "configurations": {
+          "development": {
+            "extractLicenses": false,
+            "optimization": false,
+            "sourceMap": true,
+            "vendorChunk": true
+          },
+          "production": {
+            "fileReplacements": [
+              {
+                "replace": "apps/web_app_1/src/environments/environment.ts",
+                "with": "apps/web_app_1/src/environments/environment.prod.ts"
+              }
+            ],
+            "optimization": true,
+            "outputHashing": "all",
+            "sourceMap": false,
+            "namedChunks": false,
+            "extractLicenses": true,
+            "vendorChunk": false,
+            "webpackConfig": "apps/web_app_1/webpack.config.ts"
+          }
+        },
+        "dependsOn": [
+          "^build",
+          "typecheck"
+        ]
+      },
+      "serve": {
+        "executor": "@nx/react:module-federation-dev-server",
+        "defaultConfiguration": "development",
+        "options": {
+          "buildTarget": "web_app_1:build",
+          "hmr": true,
+          "port": 4201
+        },
+        "configurations": {
+          "development": {
+            "buildTarget": "web_app_1:build:development"
+          },
+          "production": {
+            "buildTarget": "web_app_1:build:production",
+            "hmr": false
+          }
+        },
+        "dependsOn": [
+          "typecheck"
+        ]
+      },
+      "serve-static": {
+        "executor": "@nx/react:module-federation-static-server",
+        "defaultConfiguration": "production",
+        "options": {
+          "serveTarget": "web_app_1:serve"
+        },
+        "configurations": {
+          "development": {
+            "serveTarget": "web_app_1:serve:development"
+          },
+          "production": {
+            "serveTarget": "web_app_1:serve:production"
+          }
+        }
+      }
+    }
+  },
+  "exports": {
+    "./Module": {
+      "@app-suite-ui/source": "./src/remote-entry.ts",
+      "types": "./src/remote-entry.ts",
+      "import": "./src/remote-entry.ts",
+      "default": "./src/remote-entry.ts"
+    }
+  },
+  "types": "./src/remote-entry.ts"
+}

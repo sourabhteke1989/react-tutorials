@@ -1,0 +1,25 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compileOnSave": false,
+  "files": [],
+  "references": [
+    {
+      "path": "./apps/y-e2e"
+    },
+    {
+      "path": "./apps/y"
+    },
+    {
+      "path": "./apps/web_shell_app-e2e"
+    },
+    {
+      "path": "./apps/web_shell_app"
+    },
+    {
+      "path": "./apps/web_app_1-e2e"
+    },
+    {
+      "path": "./apps/web_app_1"
+    }
+  ]
+}
