@@ -23,6 +23,9 @@
     },
     {
       "path": "./packages/common"
+    },
+    {
+      "path": "./apps/mobile_app_1"
     }
   ]
 }
