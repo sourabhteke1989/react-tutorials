@@ -11,6 +11,7 @@ import {
   Linking,
 } from 'react-native';
 import Svg, { G, Path } from 'react-native-svg';
+import { MobileCommon } from '@app_suite/mobile_common';
 
 export const App = () => {
   const [whatsNextYCoord, setWhatsNextYCoord] = useState<number>(0);
@@ -41,6 +42,7 @@ export const App = () => {
               Welcome MobileApp1 👋
             </Text>
           </View>
+          <MobileCommon />
           <View style={styles.section}>
             <View style={styles.hero}>
               <View style={styles.heroTitle}>
