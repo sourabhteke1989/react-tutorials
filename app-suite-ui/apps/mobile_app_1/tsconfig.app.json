@@ -41,6 +41,9 @@
   "references": [
     {
       "path": "../../packages/mobile_common/tsconfig.lib.json"
+    },
+    {
+      "path": "../../modules/app1_module/tsconfig.lib.json"
     }
   ]
 }

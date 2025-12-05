@@ -12,10 +12,12 @@ import {
 } from 'react-native';
 import Svg, { G, Path } from 'react-native-svg';
 import { MobileCommon } from '@app_suite/mobile_common';
+import { app1ModuleFeature } from '@app_suite/app1_module';
 
 export const App = () => {
   const [whatsNextYCoord, setWhatsNextYCoord] = useState<number>(0);
   const scrollViewRef = useRef<null | ScrollView>(null);
+  const str = app1ModuleFeature();
 
   return (
     <>
@@ -42,7 +44,7 @@ export const App = () => {
               Welcome MobileApp1 👋
             </Text>
           </View>
-          <MobileCommon />
+          <MobileCommon str={str} />
           <View style={styles.section}>
             <View style={styles.hero}>
               <View style={styles.heroTitle}>
