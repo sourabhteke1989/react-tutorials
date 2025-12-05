@@ -17,6 +17,12 @@
     "strict": true,
     "target": "es2022",
     "customConditions": ["@app-suite-ui/source"],
-    "baseUrl": "."
+    "baseUrl": ".",
+    "paths": {
+      "@app_suite/common": ["packages/common/src/index.ts"],
+      "@app_suite/mobile_common": ["packages/mobile_common/src/index.ts"],
+      "@app_suite/web_common": ["packages/web_common/src/index.ts"],
+      "@app_suite/app1_module": ["modules/app1_module/src/index.ts"]
+    }
   }
 }

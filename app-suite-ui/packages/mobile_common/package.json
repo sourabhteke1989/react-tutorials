@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "main": "./src/index.ts",
   "types": "./src/index.ts",
+  "devDependencies": {
+    "@app_suite/common" : "*"
+  },
   "exports": {
     ".": {
       "types": "./src/index.ts",

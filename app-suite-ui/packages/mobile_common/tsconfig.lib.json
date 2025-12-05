@@ -28,5 +28,10 @@
     "src/**/*.test.ts",
     "jest.resolver.js"
   ],
-  "include": ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"]
+  "include": ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"],
+  "references": [
+    {
+      "path": "../common/tsconfig.lib.json"
+    }
+  ]
 }
