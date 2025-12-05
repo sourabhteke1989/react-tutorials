@@ -28,7 +28,8 @@
             "apps/web_app_1/src/styles.css"
           ],
           "scripts": [],
-          "webpackConfig": "apps/web_app_1/webpack.config.ts"
+          "webpackConfig": "apps/web_app_1/webpack.config.ts",
+          "postcssConfig": "apps/web_app_1/postcss.config.js"
         },
         "configurations": {
           "development": {
